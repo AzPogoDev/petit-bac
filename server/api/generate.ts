@@ -6,7 +6,7 @@ export default defineEventHandler(async (event: H3Event) => {
     const { letter } = await readBody(event)
 
     const openai = new OpenAI({
-      apiKey: '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'
+      apiKey: process.env.NUXT_OPENAI_API_KEY
     })
 
     const prompt = `Donne-moi exactement une réponse pour chaque catégorie commençant par la lettre "${letter}" :
